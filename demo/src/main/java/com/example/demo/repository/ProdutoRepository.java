@@ -11,6 +11,8 @@ public interface ProdutoRepository extends JpaRepository <Produto, Integer> {
     @Query(value = "select * from `produto_trabalho` where preco < ?2 and descricao like %?1%", nativeQuery = true)
     public List<Produto> busca_descricao_preco(String descricao, int preco);
 
+
+    //ainda não testada
     @Query(value = "select * from `produto_trabalho` where descricao like %?1% and marca like %?2%", nativeQuery = true)
     public List<Produto> busca_descricao_marca (String descricao, String marca);
 
