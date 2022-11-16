@@ -42,5 +42,33 @@ public class ProdutoController {
         return produtoRepository.busca_descricao_preco(descricao, preco);
     }
 
+    @GetMapping("/precomenor/{preco}")
+    public List<Produto> precomenor(@PathVariable(value = "preco") int preco)
+    {
+        return produtoRepository.precomenor(preco);
+    }
 
+    @GetMapping("/precomaior/{preco}")
+    public List<Produto> precomaior(@PathVariable(value = "preco") int preco)
+    {
+        return produtoRepository.precomaior(preco);
+    }
+
+    @GetMapping("/inicialMarca/{inicial}")
+    public List<Produto> buscaInMarca(@PathVariable(value = "inicial") String inicial)
+    {
+        return produtoRepository.buscaInMarca(inicial);
+    }
+
+    @GetMapping("/inicialDescricao/{inicial}")
+    public List<Produto> buscaInDescricao(@PathVariable(value = "inicial") String inicial)
+    {
+        return produtoRepository.buscaInDescricao(inicial);
+    }
+
+    @GetMapping("/tdsAtributos/{id}/{descricao}/{marca}/{preco}")
+    public List<Produto> buscaTdsAtributos(@PathVariable(value = "id") int id, @PathVariable(value = "descricao") String descricao,
+                                           @PathVariable(value = "marca") String marca, @PathVariable(value = "preco") int preco){
+        return produtoRepository.tdsAtributos(id, descricao, marca, preco);
+    }
 }

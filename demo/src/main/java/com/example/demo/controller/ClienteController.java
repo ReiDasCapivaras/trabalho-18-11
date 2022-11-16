@@ -61,6 +61,13 @@ public class    ClienteController {
         return clienteRepository.findByIdMaior(num);
     }
 
+    @GetMapping("/nomeEmail/{nome}/{email}")
+    public List<Cliente> findNomeEmail(@PathVariable(value = "nome")String  nome, @PathVariable(value = "email") String email)
+    {
+        return clienteRepository.findNomeEmail(nome, email);
+    }
+
+
 
 
 

@@ -18,4 +18,7 @@ public interface ClienteRepository extends JpaRepository <Cliente, Integer> {
     @Query(value="select * from `cliente_trabalho` where id > ?1", nativeQuery = true)
     public List<Cliente> findByIdMaior (int id);
 
+    @Query(value = "select * from `cliente_trabalho` where nome like ?1% and email like ?2%", nativeQuery = true)
+    public List<Cliente> findNomeEmail (String nome, String email);
+
 }
