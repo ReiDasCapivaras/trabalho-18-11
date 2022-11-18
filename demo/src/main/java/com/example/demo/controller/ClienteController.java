@@ -67,7 +67,11 @@ public class    ClienteController {
         return clienteRepository.findNomeEmail(nome, email);
     }
 
-
+    @GetMapping("/findByEmail/{email}")
+    public List<Cliente> findEmail(@PathVariable(value = "email") String email)
+    {
+        return clienteRepository.findEmail(email);
+    }
 
 
 
