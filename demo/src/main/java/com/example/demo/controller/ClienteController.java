@@ -26,6 +26,18 @@ public class    ClienteController {
         clienteRepository.save(cliente);
     }
 
+    @PutMapping
+    public void alteraCliente(@RequestBody Cliente cliente)
+    {
+        clienteRepository.save(cliente);
+    }
+
+    @DeleteMapping("/deletarCliente")
+    public void removerClitente(@RequestBody Cliente cliente)
+    {
+        clienteRepository.delete(cliente);
+    }
+
     //1
 
     @GetMapping ("/id/{id}")

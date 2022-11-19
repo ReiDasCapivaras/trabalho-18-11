@@ -28,6 +28,18 @@ public class ProdutoController {
         produtoRepository.save(produto);
     }
 
+    @PutMapping("alteraProduto")
+    public void alteraProduto(@RequestBody Produto produto)
+    {
+        produtoRepository.save(produto);
+    }
+
+    @DeleteMapping
+    public void deletaProduto(@RequestBody Produto produto)
+    {
+        produtoRepository.delete(produto);
+    }
+
 
     @GetMapping("/produto/{id}")
     public Optional<Produto> buscarPorId
